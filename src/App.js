@@ -4,27 +4,37 @@ import Budget from "./components/Budget";
 import Remaining from "./components/Remaining";
 import ExpenseTotal from "./components/ExpenseTotal";
 import ExpenseList from "./components/ExpenseList";
+import AddExpenseForm from "./components/AddExpenseForm";
+import { AppProvider } from "./context/AppContext";
 
 const App = () => {
   return (
-    <div className="container">
-      <h1 className="mt-3"> Controle de Orçamento</h1>
-      <div className="row mt-3">
-        <div className="col-sm">
-          <Budget />
+    <AppProvider>
+      <div className="container">
+        <h1 className="mt-3"> Controle de Orçamento</h1>
+        <div className="row mt-3">
+          <div className="col-sm">
+            <Budget />
+          </div>
+          <div className="col-sm">
+            <Remaining />
+          </div>
+          <div className="col-sm">
+            <ExpenseTotal />
+          </div>
         </div>
+        <h3 className="mt-3"> Gastos Detalhados</h3>
         <div className="col-sm">
-          <Remaining />
+          <ExpenseList />
         </div>
-        <div className="col-sm">
-          <ExpenseTotal />
+        <h3 className="mt-3">Adicionar Despesa</h3>
+        <div className="mt-3">
+          <div className="col-sm">
+            <AddExpenseForm />
+          </div>
         </div>
       </div>
-      <h3 className="mt-3"> Gastos Detalhados</h3>
-      <div className="col-sm">
-        <ExpenseList />
-      </div>
-    </div>
+    </AppProvider>
   );
 };
 
