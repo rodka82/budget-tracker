@@ -27,7 +27,7 @@ export const AppProvider = (props) => {
       dispatch
     }
   }>
-    {props.children}
+    {props.children} 
   </AppContext.Provider>)
 };
 
